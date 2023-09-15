@@ -2,8 +2,8 @@
 
 Planificador de planes de rodaje.
 
- - [Configuración de git](https://github.com/diagmatrix/maybe-better-maybe-worse/docs/git_config.png)
- - [Configuración de clave](https://github.com/diagmatrix/maybe-better-maybe-worse/docs/ssh_key.png)
+ - [Configuración de git](docs/git_config.png)
+ - [Configuración de clave](docs/ssh_key.png)
 
 ## Problema a resolver
 
