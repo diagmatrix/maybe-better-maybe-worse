@@ -2,11 +2,10 @@
 
 En este documento aparecen y se irán añadiendo las milestones del proyecto.
 
-#### [M0] Estructura de datos para representar los diferentes elementos de un plan de rodaje
+#### [M0] Estructura de datos para representar un plan de rodaje
 
 Esta primera milestone es el mínimo necesario para poder modelar un plan de 
-rodaje. Será la milestone interna puesto que no genera ningún producto mínimo
-y es necesaria para las siguientes. Los elementos típicos suelen ser:
+rodaje. Los elementos típicos de un rodaje suelen ser:
 
  - **Actores**: Qué actores participan del rodaje, que rol o roles tienen en la
    película, qué disponibilidad tienen...
@@ -17,10 +16,8 @@ y es necesaria para las siguientes. Los elementos típicos suelen ser:
  - **Equipo técnico**: Qúe rol tiene, como director, cámara, técnico de sonido,
    ...
 
-#### [M1] Estructura de datos para representar un plan de rodaje
-
-Se trata de crear la estructura necesaria para modelar un plan de rodaje, que
-no es más que una lista ordenada de planos. Un plano se suele componer de:
+Un plan de rodaje no es más que una lista ordenada de planos. Un plano se 
+suele componer de:
 
  - **Identificador del plano**: Por ejemplo, plano 2 de la escena 3.
  - **Localización del plano**: Lugar en el que se debe grabar el plano.
@@ -35,7 +32,7 @@ Historias de usuario asociadas:
 [[HU02]](https://github.com/diagmatrix/maybe-better-maybe-worse/issues/3),
 [[HU04]](https://github.com/diagmatrix/maybe-better-maybe-worse/issues/5)
 
-#### [M2] Generar un plan de rodaje a partir de los planos
+#### [M1] Generar un plan de rodaje a partir de los planos
 
 Esta milestone incorpora el funcionamiento más básico de la lógica de negocio,
 que trata de generar un plan de rodaje a partir de los planos del producto
