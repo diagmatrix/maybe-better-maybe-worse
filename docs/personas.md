@@ -20,8 +20,8 @@ Penélope es una actriz en auge que compagina su carrera como actriz con un
 trabajo convencional. Le gusta saber con antelación sus horarios para poder
 pedirse esos días de asuntos propios.
 
-## Héctor
+## Aquiles
 
-Héctor es un ayudante de cámara con un problema crónico en la rodilla. Tiene
-que ayudar a montar los sets, y odia tener que hacer muchos montajes y
-desmontajes el mismo día.
+Aquiles es un ayudante de cámara con un problema crónico en el tobillo que
+limita su movilidad. Tiene que ayudar a montar los sets, y odia tener que 
+hacer muchos montajes y desmontajes el mismo día.

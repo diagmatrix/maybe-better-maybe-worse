@@ -12,6 +12,6 @@ En este documento aparecen las historias de usuario
 
 #### [HU05] Ulises quiere que el rodaje dure el menor tiempo posible
 
-#### [HU06] Héctor quiere poder grabar en la misma localización la mayor cantidad de tiempo posible
+#### [HU06] Aquiles quiere poder grabar en la misma localización la mayor cantidad de tiempo posible
 
 #### [HU07] Helena quiere que los planos que no da tiempo a grabar se reprogramen en otro momento
