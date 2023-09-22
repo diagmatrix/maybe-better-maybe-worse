@@ -36,7 +36,10 @@ Historias de usuario asociadas:
 
 Esta milestone incorpora el funcionamiento más básico de la lógica de negocio,
 que trata de generar un plan de rodaje a partir de los planos del producto
-audiovisual con el que se desea construir.
+audiovisual con el que se desea construir. De esta manera, se debe construir
+un algoritmo capaz de, a partir de las limitaciones temporales de cada plano,
+ordenarlos de manera que no exista ninguna incompatibilidad intentando
+minimizar el tiempo total necesario para el rodaje.
 
 Historias de usuario asociadas:
 [[HU01]](https://github.com/diagmatrix/maybe-better-maybe-worse/issues/2),
