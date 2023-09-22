@@ -30,8 +30,19 @@ no es más que una lista ordenada de planos. Un plano se suele componer de:
  - **Restricciones horarias**: Puede ser que un plano deba ser grabado
    en un cierto tramo horario, como por la noche.
 
+Historias de usuario asociadas: 
+[[HU01]](https://github.com/diagmatrix/maybe-better-maybe-worse/issues/2),
+[[HU02]](https://github.com/diagmatrix/maybe-better-maybe-worse/issues/3),
+[[HU04]](https://github.com/diagmatrix/maybe-better-maybe-worse/issues/5)
+
 #### [M2] Generar un plan de rodaje a partir de los planos
 
 Esta milestone incorpora el funcionamiento más básico de la lógica de negocio,
 que trata de generar un plan de rodaje a partir de los planos del producto
 audiovisual con el que se desea construir.
+
+Historias de usuario asociadas:
+[[HU01]](https://github.com/diagmatrix/maybe-better-maybe-worse/issues/2),
+[[HU03]](https://github.com/diagmatrix/maybe-better-maybe-worse/issues/4),
+[[HU05]](https://github.com/diagmatrix/maybe-better-maybe-worse/issues/6),
+[[HU06]](https://github.com/diagmatrix/maybe-better-maybe-worse/issues/7)
