@@ -2,9 +2,6 @@
 
 Planificador de planes de rodaje.
 
- - [Configuración de git](docs/git_config.png)
- - [Configuración de clave](docs/ssh_key.png)
-
 ## Problema a resolver
 
 Para realizar el rodaje de un producto audiovisual, es necesario realizar un 
@@ -22,3 +19,15 @@ A partir de los datos proporcionados por una productora (equipos, actores,
 planos, ...) generar diferentes propuestas para planes de rodaje atendiendo
 a preferencias específicas y que pueda ser modificado a lo largo del tiempo
 conforme va avanzando el rodaje.
+
+## Estado del proyecto
+
+ 1. Configuración del repositorio
+    - [Configuración de git](docs/git_config.png)
+    - [Configuración de clave](docs/ssh_key.png)
+
+ 2. Historias de usuario
+    - [Personas](docs/personas.md)
+    - [Historias de usuario](docs/historias_usuario.md)
+
+ 3. [*Milestones*](docs/milestones.md)
