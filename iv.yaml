@@ -1,2 +1,2 @@
 lenguaje: Go
-entidad: src/planrodaje.go
+entidad: internal/planrodaje.go

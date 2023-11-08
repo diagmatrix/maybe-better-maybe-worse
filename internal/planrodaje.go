@@ -1,4 +1,4 @@
-package src
+package internal
 
 // PlanRodaje representa un plan de rodaje que contiene una serie de planos
 type PlanRodaje struct {
