@@ -24,8 +24,11 @@ la lógica de negocio, que no es más que la generación de un plan de rodaje
 a partir de las restricciones propias de los datos aportados.
 
 Se entregarán los ficheros de código fuente con los algoritmos necesarios
-para resolver la generación de un plan de rodaje. Se considerará viable
-cuando supere los tests creados para esta milestone.
+para resolver la generación de un plan de rodaje. 
+
+Se considerará viable cuando supere los tests creados para esta milestone y
+cuando se hayan elegido las herramientas necesarias para la gestión de
+paquetes, gestión de tareas y *runtime*.
 
 Historias de usuario asociadas:
 [[HU01]](https://github.com/diagmatrix/maybe-better-maybe-worse/issues/2),
