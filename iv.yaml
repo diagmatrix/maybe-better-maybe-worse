@@ -1,2 +1,5 @@
 lenguaje: Go
-entidad: internal/planrodaje.go
+entidad: cmd/main.go
+automatizar:
+  fichero: justfile
+  orden: just check
