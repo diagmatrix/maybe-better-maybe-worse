@@ -1,4 +1,4 @@
-package internal
+package ppf
 
 import "time"
 
@@ -7,4 +7,3 @@ type Plano struct {
 	actores        []Actor
 	lugarGrabacion string
 }
-
