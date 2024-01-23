@@ -35,3 +35,4 @@ conforme va avanzando el rodaje.
  4. Toolchain
     - [Criterios](docs/criterios.md)
     - [Gestor de paquetes](docs/dependencias.md)
+    - [Gestor de tareas](docs/gestor_tareas.md)
