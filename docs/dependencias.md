@@ -20,4 +20,5 @@ Existen alternativas, pero están desactualizadas, ya que con la integración de
  cuatro comandos, lo cual la hace muy sencilla de utilizar.
 
 Todas estas alternativas a **Go Modules** llevan al menos 5 años sin desarrollarse, debido a que la 
-mayoría de usuarios han optado por utilizar la herramienta oficial.
+mayoría de usuarios han optado por utilizar la herramienta oficial. Ninguna de estas herramientas 
+contiene puntuación en la herramienta Synk.
