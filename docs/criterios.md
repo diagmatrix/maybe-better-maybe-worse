@@ -9,7 +9,7 @@ Durante el desarrollo del proyecto, y a posteriori, serán necesarias herramient
   - Se evitará tomar decisiones de desarrollo que aumenten la **deuda técnica**, minimizando el número 
   de dependencias. De esta manera, se priorizará que la herramienta esté desarrollada en el lenguaje del
   proyecto o necesite el menor número posible de programas externos.
-  - Se evitará el uso de herramientas poco extendidas. Se establece como criterio un mínimo de 500
+  - Se evitará el uso de herramientas poco extendidas. Se establece como criterio un mínimo de 500.
   estrellas en el repositorio de la herramienta.
   - Se evitará en su mayor medida el uso de herramientas no libres, puesto que el proyecto intenta seguir
   la filosofía del **software libre**.
