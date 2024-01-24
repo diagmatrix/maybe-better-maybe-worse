@@ -2,4 +2,4 @@ lenguaje: Go
 entidad: pkg/planrodaje.go
 automatizar:
   fichero: justfile
-  orden: just check
+  orden: just
