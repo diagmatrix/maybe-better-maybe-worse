@@ -4,6 +4,9 @@ import "time"
 
 type Plano struct {
 	tiempoEstimado time.Duration
-	actores        []Actor
+	actores        []Miembro
+	equipoTecnico  []Miembro
 	lugarGrabacion string
+	escena         string
+	identificador  string
 }

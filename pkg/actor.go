@@ -2,7 +2,16 @@ package ppf
 
 import "time"
 
-type Actor struct {
+type TipoMiembro int
+
+const (
+	Actor TipoMiembro = iota
+	Tecnico
+)
+
+type Miembro struct {
 	horariosDisponibilidad []time.Time
 	planosARodar           []Plano
+	nombre                 string
+	Tipo                   TipoMiembro
 }
