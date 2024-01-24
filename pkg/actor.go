@@ -2,16 +2,18 @@ package ppf
 
 import "time"
 
-type TipoMiembro int
+// MemberType represents the different kinds of crew members of the shooting plan
+type MemberType int
 
 const (
-	Actor TipoMiembro = iota
-	Tecnico
+	Actor MemberType = iota
+	Crew
 )
 
-type Miembro struct {
-	horariosDisponibilidad []time.Time
-	planosARodar           []Plano
-	nombre                 string
-	Tipo                   TipoMiembro
+// Member represents a member of the film crew
+type Member struct {
+	availability []time.Time
+	shots        []Shot
+	name         string
+	crewType     MemberType
 }

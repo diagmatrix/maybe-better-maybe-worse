@@ -2,11 +2,13 @@ package ppf
 
 import "time"
 
-type AsignacionPlano struct {
-	PlanoAAsignar Plano
-	FechaInicio   time.Time
+// PlannedShot represents a shot that is planned in the shooting plan
+type PlannedShot struct {
+	shot         Shot
+	startingDate time.Time
 }
 
-type PlanRodaje struct {
-	planosAsignados []AsignacionPlano
+// ShootingPlan represents the shooting plan
+type ShootingPlan struct {
+	plannedShots []PlannedShot
 }
