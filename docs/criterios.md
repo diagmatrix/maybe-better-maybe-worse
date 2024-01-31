@@ -4,7 +4,6 @@ Durante el desarrollo del proyecto, y a posteriori, serán necesarias herramient
 
   - El lenguaje usado en el proyecto es [**Go**](https://go.dev/), por lo que las herramientas deberán
   tener soporte para este lenguaje.
-  - Debido al tiempo de desarrollo del proyecto, se elegirán herramientas **sencillas** y que no supongan mucho esfuerzo de aprendizaje.
   - Se tendrá en cuenta la magnitud del proyecto a la hora de elegir herramientas. Esto es, puesto que el proyecto es pequeño, no se elegirán herramientas para el desarrollo de grandes aplicaciones.
   - Se evitará tomar decisiones de desarrollo que aumenten la **deuda técnica**, minimizando el número 
   de dependencias. De esta manera, se priorizará que la herramienta esté desarrollada en el lenguaje del
