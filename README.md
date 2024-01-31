@@ -20,6 +20,21 @@ planos, ...) generar diferentes propuestas para planes de rodaje atendiendo
 a preferencias específicas y que pueda ser modificado a lo largo del tiempo
 conforme va avanzando el rodaje.
 
+## Dependencias
+
+Este proyecto tiene las siguientes dependencias para su creación:
+
+ - [*just*](https://github.com/casey/just)
+ - [*Go*](https://go.dev/)
+
+## Órdenes
+
+Para comprobar el validez sintáctica de los archivos del proyecto, ejecutar:
+
+```Bash
+just check
+```
+
 ## Estado del proyecto
 
  1. Configuración del repositorio
@@ -31,3 +46,8 @@ conforme va avanzando el rodaje.
     - [Historias de usuario](docs/historias_usuario.md)
 
  3. [*Milestones*](docs/milestones.md)
+
+ 4. Toolchain
+    - [Criterios](docs/criterios.md)
+    - [Gestor de paquetes](docs/dependencias.md)
+    - [Gestor de tareas](docs/gestor_tareas.md)

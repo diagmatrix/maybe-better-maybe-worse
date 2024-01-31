@@ -1,0 +1,9 @@
+﻿version: '3'
+
+tasks:
+
+  check:
+    label: "Comprobando sintaxis del proyecto..."
+    desc: "Comprueba la sintaxis de los archivos de código del proyecto"
+    cmds:
+      - gofmt -e ./pkg/ > /dev/null

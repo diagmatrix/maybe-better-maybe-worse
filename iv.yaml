@@ -1,2 +1,5 @@
 lenguaje: Go
-entidad: internal/planrodaje.go
+entidad: pkg/planrodaje.go
+automatizar:
+  fichero: taskfile.yaml
+  orden: task
