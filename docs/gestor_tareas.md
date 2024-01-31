@@ -11,8 +11,7 @@ documentada y conocida.
  | Criterio              | Ajuste en herramienta |     |
 |------------------------|-----------------------| --- |
 | ***Soporte en Go***    | Make permite crear reglas para cualquier lenguaje de programación. | ✓ |
-| ***Facilidad de uso*** | La lógica de ejecución y creación de reglas es poco intuitiva e incluso confusa (reglas `.PHONY`, por ejemplo). | ✗ |
-| ***Deuda técnica***    | Make es una herramienta que suele estar instalada por defecto en las distribuciones Linux. De no estarlo, está disponible para esos sistemas casi sin dependencias (sólo a librerías de C que sí que están por defecto en el sistema) | ✓ |
+| ***Dependencias***    | Make es una herramienta que únicamente tiene como dependencias librerías de C necesarias para un núcleo Linux. Sin embargo, es un programa externo, añadiéndose como dependencia. | - |
 | ***Popularidad***      | Make es una herramienta muy conocida y utilizada. | ✓ |
 | ***Desarrollo***       | Make está en desarrollo y tiene soporte. La última versión fue lanzada en febrero de 2023 | ✓ |
 
@@ -27,8 +26,7 @@ luego lanzar desde la línea de comandos.
  | Criterio              | Ajuste en herramienta |     |
 |------------------------|-----------------------| --- |
 | ***Soporte en Go***    | Just permite crear reglas para cualquier lenguaje de programación. | ✓ |
-| ***Facilidad de uso*** | Al ser ''básicamente'' una forma de encapsular comandos mediante alias, no tiene mayor dificultad que los comandos que se quieran automatizar. | ✓ |
-| ***Deuda técnica***    | Just está escrito en Rust, un lenguaje de programación que está en desarrollo y con una popularidad creciente. Sin embargo, es una dependencia externa al proyecto que añadir. | — |
+| ***Dependencias***    | Just está escrito en Rust, un lenguaje de programación que está en desarrollo y con una popularidad creciente. Sin embargo, añade como dependencia ese lenguaje al programa. | ✖ |
 | ***Popularidad***      | Just es conocida y bastante utilizada, sobretodo en proyectos de tamaño pequeño o medio, como es el caso. El repositorio tiene más de 15000 estrellas. | ✓ |
 | ***Desarrollo***       | Just está en desarrollo y tiene soporte. La última versión fue lanzada en enero de 2024 | ✓ |
 
@@ -37,13 +35,13 @@ Al no ser una herramienta nativa de Go, no he encontrado ninguna puntuación de 
 ## [Task](https://taskfile.dev/)
 
 Esta herramienta permite, mediante la creación de un archivo de configuración, crear tareas automáticas.
-La configuración se escribe en formato `yaml`, simplificando la comprensión de las reglas.
+La configuración se escribe en formato `yaml`, simplificando la comprensión de las reglas. Se trata de una
+visión 'moderna' de *make*.
 
  | Criterio              | Ajuste en herramienta |     |
 |------------------------|-----------------------| --- |
 | ***Soporte en Go***    | Task permite crear reglas para cualquier lenguaje de programación. | ✓ |
-| ***Facilidad de uso*** | Task es una mejora frente a *make* a la hora de crear reglas. Sin embargo, contiene muchas funcionalidades que no son necesarias en este proyecto y aumentan su complejidad. | — |
-| ***Deuda técnica***    | Task está escrito en Go y puede ser instalado desde el propio gestor de paquetes del lenguaje. | ✓ |
+| ***Dependencias***    | Task está escrito en Go y puede ser instalado desde el propio gestor de paquetes del lenguaje. Por tanto, no supone ninguna dependencia adicional. | ✓ |
 | ***Popularidad***      | Task es conocida, aunque no tanto como las demás. Su repositorio tiene más de 9000 estrellas. | ✓ |
 | ***Desarrollo***       | Just está en desarrollo y tiene soporte. La última versión fue lanzada en diciembre de 2023 | ✓ |
 
@@ -52,7 +50,5 @@ comprobar en el repositorio de la misma que no es así.
 
 ## Conclusión
 
-Debido al tamaño del proyecto, la herramienta más adecuada es **just**, puesto que permite trasladar
-rápidamente tareas que se realizan desde la línea de comandos a un archivo de configuración, aportando 
-las funcionalidades básicas pero necesarias para la automatización de tareas. Además, puesto que la 
-compilación en Go no es complicada, no es necesario utilizar herramientas complejas.
+Teniendo en cuenta los criterios, la herramienta más adecuada es **task**, puesto que no añade dependencias externas, es suficientemente
+popular y está en desarrollo acutalmente.
