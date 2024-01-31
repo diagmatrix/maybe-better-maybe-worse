@@ -1,5 +1,5 @@
 lenguaje: Go
 entidad: pkg/planrodaje.go
 automatizar:
-  fichero: justfile
-  orden: just
+  fichero: taskfile
+  orden: task
