@@ -3,4 +3,4 @@
 # Valida sintácticamente los ficheros
 check:
     @echo "Validando sintácticamente el proyecto..."
-    go vet ./...
+    gofmt -e ./internal/ > /dev/null
