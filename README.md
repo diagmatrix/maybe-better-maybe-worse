@@ -51,3 +51,4 @@ just check
     - [Criterios](docs/criterios.md)
     - [Gestor de paquetes](docs/dependencias.md)
     - [Gestor de tareas](docs/gestor_tareas.md)
+    - [Tests](docs/tests.md)
