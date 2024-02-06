@@ -38,10 +38,10 @@ func MemberTypeFromString(memberType string) (MemberType, error) {
 
 // Member represents a member of the film crew
 type Member struct {
-	availability [][]time.Time
+	Availability [][]time.Time
 	shots        []Shot
 	Name         string
-	crewType     MemberType
+	CrewType     MemberType
 }
 
 // NewMember creates a new member of the film crew
@@ -49,10 +49,10 @@ type Member struct {
 // It returns a Member
 func NewMember(name string, crewType MemberType, availability [][]time.Time) Member {
 	return Member{
-		availability: availability,
+		Availability: availability,
 		shots:        []Shot{},
 		Name:         name,
-		crewType:     crewType,
+		CrewType:     crewType,
 	}
 }
 
@@ -63,6 +63,7 @@ func ParseTimeTable(filePath string) (Member, error) {
 
 	filePath = filepath.FromSlash(filePath)
 
+	// Get the crew type from the file path
 	dir := filepath.Dir(filePath)
 	crewTypeString := filepath.Base(dir)
 	crewType, err := MemberTypeFromString(crewTypeString)
@@ -70,15 +71,28 @@ func ParseTimeTable(filePath string) (Member, error) {
 		return Member{}, err
 	}
 
+	// Get the name of the crew member from the file name
 	fileName := filepath.Base(filePath)
 	name := fileName[:len(fileName)-len(filepath.Ext(fileName))]
 
+	// Check if the file exists
+	if _, err := os.Stat(filePath); os.IsNotExist(err) {
+		return Member{}, err
+	}
+
+	// Check file extension
+	if filepath.Ext(filePath) != ".csv" {
+		return Member{}, utils.ErrInvalidFileType
+	}
+
+	// Open the file
 	file, err := os.Open(filePath)
 	if err != nil {
 		return Member{}, err
 	}
 	defer file.Close()
 
+	// Read the file
 	reader := csv.NewReader(file)
 	reader.Comma = ';'
 	lines, err := reader.ReadAll()
@@ -86,10 +100,12 @@ func ParseTimeTable(filePath string) (Member, error) {
 		return Member{}, err
 	}
 
+	// Check the header
 	if strings.Join(lines[0], ";") != utils.TIMETABLEHEADER {
 		return Member{}, utils.ErrInvalidHeader
 	}
 
+	// Parse the availability
 	var availability [][]time.Time
 	for _, line := range lines[1:] {
 		startDate, err := utils.FormatTime(line[0], line[1])
@@ -100,6 +116,11 @@ func ParseTimeTable(filePath string) (Member, error) {
 		if err != nil {
 			return Member{}, err
 		}
+
+		if endDate.Before(startDate) {
+			return Member{}, utils.ErrInvalidAvailability
+		}
+
 		availability = append(availability, []time.Time{startDate, endDate})
 	}
 

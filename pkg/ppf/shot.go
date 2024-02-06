@@ -12,13 +12,13 @@ import (
 
 // Shot represents a shot in a the shooting plan
 type Shot struct {
-	estimatedDuration time.Duration
-	cast              []Member
-	crew              []Member
-	setting           string
-	scene             string
-	id                string
-	details           string
+	EstimatedDuration time.Duration
+	Cast              []Member
+	Crew              []Member
+	Setting           string
+	Scene             string
+	Id                string
+	Details           string
 }
 
 // NewShot creates a new shot
@@ -26,13 +26,13 @@ type Shot struct {
 // It returns a Shot
 func NewShot(estimatedDuration time.Duration, cast []Member, crew []Member, setting, scene, id, details string) Shot {
 	return Shot{
-		estimatedDuration: estimatedDuration,
-		cast:              cast,
-		crew:              crew,
-		setting:           setting,
-		scene:             scene,
-		id:                id,
-		details:           details,
+		EstimatedDuration: estimatedDuration,
+		Cast:              cast,
+		Crew:              crew,
+		Setting:           setting,
+		Scene:             scene,
+		Id:                id,
+		Details:           details,
 	}
 }
 
@@ -42,12 +42,24 @@ func NewShot(estimatedDuration time.Duration, cast []Member, crew []Member, sett
 func ParseTechnicalGuide(filePath string, members []Member) ([]Shot, error) {
 	filePath = filepath.FromSlash(filePath)
 
+	// Check file exists
+	if _, err := os.Stat(filePath); os.IsNotExist(err) {
+		return []Shot{}, utils.ErrInvalidFileType
+	}
+
+	// Check valid file type
+	if filepath.Ext(filePath) != ".csv" {
+		return []Shot{}, utils.ErrInvalidFileType
+	}
+
+	// Open file
 	file, err := os.Open(filePath)
 	if err != nil {
 		return []Shot{}, err
 	}
 	defer file.Close()
 
+	// Read file
 	reader := csv.NewReader(file)
 	reader.FieldsPerRecord = -1 // Allow variable number of fields per record
 	reader.Comma = ';'
@@ -56,10 +68,12 @@ func ParseTechnicalGuide(filePath string, members []Member) ([]Shot, error) {
 		return []Shot{}, err
 	}
 
+	// Check header
 	if strings.Join(lines[0], ";") != utils.TECHNICALGUIDEHEADER {
 		return []Shot{}, utils.ErrInvalidHeader
 	}
 
+	// Parse shots
 	var shots []Shot
 	for _, line := range lines[1:] {
 		scene := line[0]
@@ -75,6 +89,7 @@ func ParseTechnicalGuide(filePath string, members []Member) ([]Shot, error) {
 			return []Shot{}, err
 		}
 
+		// Parse cast
 		var cast []Member
 		if len(line[4]) == 0 {
 			cast = []Member{}
@@ -87,8 +102,13 @@ func ParseTechnicalGuide(filePath string, members []Member) ([]Shot, error) {
 					}
 				}
 			}
+			// Check if all cast members are in the list
+			if len(cast) != len(cast_names) {
+				return []Shot{}, utils.ErrInvalidCast
+			}
 		}
 
+		// Parse crew
 		var crew []Member
 		if len(line[5]) == 0 {
 			crew = []Member{}
@@ -100,6 +120,10 @@ func ParseTechnicalGuide(filePath string, members []Member) ([]Shot, error) {
 						crew = append(crew, member)
 					}
 				}
+			}
+			// Check if all crew members are in the list
+			if len(crew) != len(crew_names) {
+				return []Shot{}, utils.ErrInvalidCrew
 			}
 		}
 		shots = append(shots, NewShot(estimatedDuration, cast, crew, setting, scene, shotID, details))
