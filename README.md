@@ -24,8 +24,9 @@ conforme va avanzando el rodaje.
 
 Este proyecto tiene las siguientes dependencias para su creación:
 
- - [*just*](https://github.com/casey/just)
  - [*Go*](https://go.dev/)
+ - [*Testify*](https://github.com/stretchr/testify)
+ - [*Task*](https://taskfile.dev/)
 
 ## Órdenes
 
