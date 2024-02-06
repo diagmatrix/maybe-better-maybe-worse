@@ -7,3 +7,9 @@ tasks:
     desc: "Comprueba la sintaxis de los archivos de código del proyecto"
     cmds:
       - gofmt -e ./pkg/ > /dev/null
+
+  test:
+      label: "Ejecutando tests..."
+      desc: "Ejecuta los tests del proyecto"
+      cmds:
+        - go test -v ./tests/
