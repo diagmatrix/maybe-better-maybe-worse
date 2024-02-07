@@ -23,5 +23,5 @@ RUN go mod download
 # Set the test working directory
 WORKDIR /app/test
 
-# Set entrypoint
+# Set entrypoint for testing
 ENTRYPOINT ["task", "test"]
