@@ -1,10 +1,11 @@
 name: Upload to Docker Hub
 
 on:
-  paths:
-    - 'Dockerfile'
-    - 'go.mod'
-    - 'go.sum'
+  push:
+    paths:
+      - 'Dockerfile'
+      - 'go.mod'
+      - 'go.sum'
 
 jobs:
   push_to_registry:
