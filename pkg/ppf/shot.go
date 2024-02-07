@@ -21,9 +21,8 @@ type Shot struct {
 	Details           string
 }
 
-// NewShot creates a new shot
-// It takes the estimated duration of the shot, the cast members, the crew members, the setting, the scene, the id and the details as arguments
-// It returns a Shot
+// NewShot returns a new shot given its estimated duration, cast, crew, setting, scene, shot identifier
+// and some details for that shot.
 func NewShot(estimatedDuration time.Duration, cast []Member, crew []Member, setting, scene, id, details string) Shot {
 	return Shot{
 		EstimatedDuration: estimatedDuration,
@@ -36,9 +35,10 @@ func NewShot(estimatedDuration time.Duration, cast []Member, crew []Member, sett
 	}
 }
 
-// ParseTechnicalGuide parses a technical guide into the data needed to create a shot
-// It takes the file path as an argument and the list of crew members
-// It returns a list of shots or an error if the parsing fails
+// ParseTechnicalGuide parses a technical guide into the data needed to create a list of shots.
+// Argument filePath contains the filepath of the technical guide (a csv file) and members is the
+// list of Member objects that participate in those shots.
+// This function returns a list containing the shots found on the file, or an error if something goes wrong.
 func ParseTechnicalGuide(filePath string, members []Member) ([]Shot, error) {
 	filePath = filepath.FromSlash(filePath)
 
@@ -97,7 +97,7 @@ func ParseTechnicalGuide(filePath string, members []Member) ([]Shot, error) {
 			cast_names := strings.Split(line[4], ",")
 			for _, name := range cast_names {
 				for _, member := range members {
-					if member.Name == name {
+					if member.name == name {
 						cast = append(cast, member)
 					}
 				}
@@ -116,7 +116,7 @@ func ParseTechnicalGuide(filePath string, members []Member) ([]Shot, error) {
 			crew_names := strings.Split(line[5], ",")
 			for _, name := range crew_names {
 				for _, member := range members {
-					if member.Name == name {
+					if member.name == name {
 						crew = append(crew, member)
 					}
 				}
