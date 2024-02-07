@@ -44,9 +44,7 @@ type Member struct {
 	crewType     MemberType
 }
 
-// NewMember creates a new member of the film crew
-// It takes the name of the member, the type of the member and the availability of the member as arguments
-// It returns a Member
+// NewMember creates a new member of the film crew given its name, type and availability
 func NewMember(name string, crewType MemberType, availability [][]time.Time) Member {
 	return Member{
 		availability: availability,
@@ -71,9 +69,9 @@ func (m Member) GetCrewType() MemberType {
 	return m.crewType
 }
 
-// ParseTimeTable parses a time table into the data needed to create a crew member
-// It takes the file path as an argument
-// It returns the name of the crew member, the type of the crew member and the availability of the crew member
+// ParseTimeTable parses a time table into the data needed to create a crew member given its file path.
+// filePath contains the filepath of the time table (a csv file).
+// This function returns a Member object or an error if something goes wrong.
 func ParseTimeTable(filePath string) (Member, error) {
 
 	filePath = filepath.FromSlash(filePath)
