@@ -22,11 +22,9 @@ const (
 	Crew
 )
 
-// MemberTypeFromString converts a string to a MemberType
-// It takes a string as an argument
-// It returns a MemberType or an error if the conversion fails
-func MemberTypeFromString(memberType string) (MemberType, error) {
-	switch memberType {
+// MemberTypeFromString converts stringMemberType to a MemberType and returns an error if the string is invalid
+func MemberTypeFromString(stringMemberType string) (MemberType, error) {
+	switch stringMemberType {
 	case "Actor", "actor":
 		return Actor, nil
 	case "Crew", "crew":
