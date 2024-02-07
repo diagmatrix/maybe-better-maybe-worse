@@ -42,6 +42,21 @@ Para lanzar los tests del proyecto, ejecutar:
 task test
 ```
 
+## Contenedor de pruebas
+
+Existe un contenedor de Docker para realizar pruebas. Para crear el contenedor y
+ejecutar las pruebas, ejecutar:
+
+```Bash
+docker build -t diagmatrix/maybe-better-maybe-worse . && docker run -u 1001 -t -v `pwd`:/app/test diagmatrix/maybe-better-maybe-worse
+```
+
+Para ejecutar únicamente el contenedor (si está construido), ejecutar:
+
+```Bash
+docker run -u 1001 -t -v `pwd`:/app/test diagmatrix/maybe-better-maybe-worse
+```
+
 ## Estado del proyecto
 
  1. Configuración del repositorio
