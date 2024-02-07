@@ -38,10 +38,10 @@ func MemberTypeFromString(memberType string) (MemberType, error) {
 
 // Member represents a member of the film crew
 type Member struct {
-	Availability [][]time.Time
+	availability [][]time.Time
 	shots        []Shot
-	Name         string
-	CrewType     MemberType
+	name         string
+	crewType     MemberType
 }
 
 // NewMember creates a new member of the film crew
@@ -49,11 +49,26 @@ type Member struct {
 // It returns a Member
 func NewMember(name string, crewType MemberType, availability [][]time.Time) Member {
 	return Member{
-		Availability: availability,
+		availability: availability,
 		shots:        []Shot{},
-		Name:         name,
-		CrewType:     crewType,
+		name:         name,
+		crewType:     crewType,
 	}
+}
+
+// GetAvailability returns the availability of the crew member
+func (m Member) GetAvailability() [][]time.Time {
+	return m.availability
+}
+
+// GetName returns the name of the crew member
+func (m Member) GetName() string {
+	return m.name
+}
+
+// GetCrewType returns the type of the crew member
+func (m Member) GetCrewType() MemberType {
+	return m.crewType
 }
 
 // ParseTimeTable parses a time table into the data needed to create a crew member
