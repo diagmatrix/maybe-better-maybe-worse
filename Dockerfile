@@ -1,4 +1,4 @@
-# Base image
+# Base image for container
 FROM golang:alpine3.18
 
 # Set label
