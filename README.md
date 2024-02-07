@@ -24,15 +24,22 @@ conforme va avanzando el rodaje.
 
 Este proyecto tiene las siguientes dependencias para su creación:
 
- - [*just*](https://github.com/casey/just)
  - [*Go*](https://go.dev/)
+ - [*Testify*](https://github.com/stretchr/testify)
+ - [*Task*](https://taskfile.dev/)
 
 ## Órdenes
 
 Para comprobar el validez sintáctica de los archivos del proyecto, ejecutar:
 
 ```Bash
-just check
+task check
+```
+
+Para lanzar los tests del proyecto, ejecutar:
+
+```Bash
+task test
 ```
 
 ## Estado del proyecto
@@ -51,3 +58,4 @@ just check
     - [Criterios](docs/criterios.md)
     - [Gestor de paquetes](docs/dependencias.md)
     - [Gestor de tareas](docs/gestor_tareas.md)
+    - [Tests](docs/tests.md)

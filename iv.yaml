@@ -1,5 +1,6 @@
 lenguaje: Go
-entidad: pkg/planrodaje.go
+entidad: pkg/shooting-plan.go
 automatizar:
   fichero: taskfile.yaml
   orden: task
+test: tests/ppf_test.go
