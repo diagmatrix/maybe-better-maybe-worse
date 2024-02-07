@@ -59,3 +59,5 @@ task test
     - [Gestor de paquetes](docs/dependencias.md)
     - [Gestor de tareas](docs/gestor_tareas.md)
     - [Tests](docs/tests.md)
+
+ 5. [*Imagen de pruebas*](docs/imagen.md)
