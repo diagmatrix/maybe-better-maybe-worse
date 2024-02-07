@@ -2,14 +2,12 @@
 
 En este documento aparecen las historias de usuario
 
-#### [HU01] Ulises no quiere tener que cuadrar la disponibilidad de los actores
+#### [HU01] Ulises quiere validar su guión técnico
 
-Ulises es una persona muy ocupada y siempre le resulta muy estresante encajar
-los planos de forma que los actores necesarios para la grabación puedan
-participar esos días. Normalmente los planos contienen el tiempo estimado de
-grabación, así como los actores que participan. A Ulises le gustaría encontrar
-una manera de, a partir de esos datos y la disponibilidad de los actores, 
-evitar resolver manualmente el *puzzle* de horarios.
+Ulises suele escribir el guión técnico de prisa y corriendo, y muchas veces suelen
+surgir problemas del mismo: No tiene los datos de algún actor, faltan planos,
+la tabla en la que lo escribe tiene datos mal... Le gustaría encontrar alguna manera
+de poder saber si su guión técnico "tiene sentido" antes de ponerse con el plan de rodaje.
 
 #### [HU02] Helena quiere añadir los planos que se le ocurren durante el rodaje
 
@@ -62,3 +60,12 @@ dejarlos para el final es incluso peor, puesto que puede implicar bastantes
 cambios de localización en poco tiempo. Siempre ha pensado que seguramente
 se podrían reprogramar en momentos pertinentes, pero le parece complicado de
 hacer manualmente.
+
+#### [HU08] Ulises no quiere tener que cuadrar la disponibilidad de los actores
+
+Ulises es una persona muy ocupada y siempre le resulta muy estresante encajar
+los planos de forma que los actores necesarios para la grabación puedan
+participar esos días. Normalmente los planos contienen el tiempo estimado de
+grabación, así como los actores que participan. A Ulises le gustaría encontrar
+una manera de, a partir de esos datos y la disponibilidad de los actores, 
+evitar resolver manualmente el *puzzle* de horarios.
