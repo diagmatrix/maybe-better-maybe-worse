@@ -38,9 +38,9 @@ func TestParseTimeTable(t *testing.T) {
 	// Test for a valid time table
 	crewMember, err := ppf.ParseTimeTable("data/actor/valid-actor.csv")
 	assert.Nil(t, err)
-	assert.Equal(t, "valid-actor", crewMember.Name)
-	assert.Equal(t, ppf.Actor, crewMember.CrewType)
-	assert.ElementsMatch(t, availableTime, crewMember.Availability)
+	assert.Equal(t, "valid-actor", crewMember.GetName())
+	assert.Equal(t, ppf.Actor, crewMember.GetCrewType())
+	assert.ElementsMatch(t, availableTime, crewMember.GetAvailability())
 }
 
 // Test to check if the ParseTimeTable function returns an error when the file does not exist or the file type is invalid
