@@ -55,6 +55,22 @@ Está patrocinada por Docker a través de su programa de patrocinio a proyectos 
 | *Mantenimiento* | La última imagen es de hace 3 meses (visitado el 11 de febrero de 2024). |
 | *Seguridad* | No hay ninguna información acerca de la seguridad de esta imagen. |
 
+## Tamaño
+
+Para comprobar el tamaño de las imágenes, se ha ejecutado `docker pull <nombre_imagen>` sobre cada
+una de las discutidas, y se ha ejecutado el comando `docker images` para visualizarlas, obteniendo como resultado:
+
+```Bash
+diagmatrix@gibbon ~ $ docker images
+REPOSITORY          TAG        IMAGE ID       CREATED        SIZE
+bitnami/golang      latest     a53c682817d0   8 hours ago    611MB
+golang              alpine     a2742f74d90f   5 days ago     230MB
+golang              bullseye   3af37afcedb7   5 days ago     755MB
+jumpserver/golang   latest     d4c090e16c3f   3 months ago   688MB
+```
+
+Podemos comprobar que la más pequeña es la de alpine, con bastante diferencia en comparación con las demás.
+
 ## Elección
 
 Por los criterios descritos, vamos a utilizar la imagen oficial de alpine, puesto que no tiene vulnerabilidades conocidas, es la más pequeña y es muy popular.
