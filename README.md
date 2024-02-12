@@ -33,13 +33,13 @@ Este proyecto tiene las siguientes dependencias para su creación:
 Para comprobar el validez sintáctica de los archivos del proyecto, ejecutar:
 
 ```Bash
-task check
+just check
 ```
 
 Para lanzar los tests del proyecto, ejecutar:
 
 ```Bash
-task test
+just test
 ```
 
 ## Contenedor de pruebas
