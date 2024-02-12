@@ -57,6 +57,8 @@ Para ejecutar únicamente el contenedor (si está construido), ejecutar:
 docker run -u 1001 -t -v `pwd`:/app/test diagmatrix/maybe-better-maybe-worse
 ```
 
+El contenedor puede encontrarse [aquí](https://hub.docker.com/repository/docker/diagmatrix/maybe-better-maybe-worse/general).
+
 ## Estado del proyecto
 
  1. Configuración del repositorio
