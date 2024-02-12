@@ -1,9 +1,9 @@
 # Base image for container
-FROM golang:alpine3.18
+FROM golang:alpine
 
 # Set label
 LABEL maintainer="manuelgb@correo.ugr.es" \
-    version="1.0"
+    version="1.1"
 
 # Create user without privileges for the app
 RUN adduser --disabled-password -u 1001 ppf-tests
@@ -12,16 +12,19 @@ RUN adduser --disabled-password -u 1001 ppf-tests
 WORKDIR /app
 
 # Install task runner
-RUN go install github.com/go-task/task/v3/cmd/task@latest
+RUN apk add just
 
 # Copy the needed files
-COPY go.mod go.sum taskfile.yml ./
+COPY go.mod go.sum justfile ./
 
 # Download the dependencies
-RUN go mod download
+RUN go mod download && go mod verify
+
+# Remove unused files
+RUN rm -f go.mod go.sum
 
 # Set the test working directory
 WORKDIR /app/test
 
 # Set entrypoint for testing
-ENTRYPOINT ["task", "test"]
+ENTRYPOINT ["just", "test"]
