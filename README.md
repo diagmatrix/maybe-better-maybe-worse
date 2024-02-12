@@ -26,7 +26,7 @@ Este proyecto tiene las siguientes dependencias para su creación:
 
  - [*Go*](https://go.dev/)
  - [*Testify*](https://github.com/stretchr/testify)
- - [*Task*](https://taskfile.dev/)
+ - [*Just*](https://github.com/casey/just)
 
 ## Órdenes
 
