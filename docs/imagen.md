@@ -175,3 +175,14 @@ sys	0m0,010s
 Podemos comprobar que en tiempo de ejecución casi idénticos.
 
 Por los criterios descritos, y teniendo en cuenta que ambas candidatas ejecutan los tests a la misma velocidad, vamos a utilizar la imagen oficial de alpine, puesto que no tiene vulnerabilidades conocidas, es más pequeña y es muy popular.
+
+# Justificación de las órdenes en el Dockerfile
+
+Para la creación del contenedor de pruebas del proyecto, se han tomado las siguientes decisiones en el
+Dockerfile:
+
+1. *Creación de un usuario sin privilegios.* Mediante la sentencia `adduser --disabled-password -u 1001 ppf-tests`, creamos un nuevo usuario que no comparte espacio de nombres con el demonio de Docker, evitando así que una vulnerabilidad de escalada de privilegios afecte al `host`. Eliminamos la opción de crear una contraseña para evitar el login de ese usuario, evitando así otras posibles fallas. Este usuario no tiene permisos de escritura sobre el directorio en el que se ejecutan los tests.
+
+2. *Instalación de dependencias.* Instalamos las dependencias del proyecto con el usuario creado, pero 
+las dependencias ajenas (*just* en nuestro caso) las instalamos desde con privilegios de *root*, puesto
+que no es posible de otra manera. Como consecuencia, no he sido capaz de eliminar los archivos `go.mod` y `go.sum` del contenedor, puesto que el usuario de tests no tiene permisos para hacerlo, y era un rompecabezas de permisos innecesario hacerlo de otra manera.
