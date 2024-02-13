@@ -22,7 +22,6 @@ USER ppf-test
 ENV GOPATH /home/ppf-test/go
 ENV GOCACHE /home/ppf-test/.cache/go-build
 RUN mkdir -p /home/ppf-test/.cache/go-build && \
-    chown -R ppf-test:ppf-test /home/ppf-test/.cache && \
     chmod -R 777 /home/ppf-test/.cache/go-build
 
 # Copy the needed files
