@@ -1,5 +1,8 @@
+Este es el archivo Dockerfile utilizado para probar la imagen de **golang/alpine** en el proyecto
+
+```Bash
 # Base image for container
-FROM alpine:latest
+FROM golang:alpine
 
 # Set label
 LABEL maintainer="manuelgb@correo.ugr.es" \
@@ -8,22 +11,12 @@ LABEL maintainer="manuelgb@correo.ugr.es" \
 # Install task runner
 RUN apk add just
 
-# Install go
-RUN apk add go
-
 # Set the working directory
 WORKDIR /app
 
-# Create user for tests and set permissions
-RUN adduser -D ppf-test && chown ppf-test /app
+# Create user for tests
+RUN adduser -D -u 1001 ppf-test && chown ppf-test /app
 USER ppf-test
-
-# Set environment variables & permissions so that 'go test' doesn't write on /app/test
-ENV GOPATH /home/ppf-test/go
-ENV GOCACHE /home/ppf-test/.cache/go-build
-RUN mkdir -p /home/ppf-test/.cache/go-build && \
-    chown -R ppf-test:ppf-test /home/ppf-test/.cache && \
-    chmod -R 777 /home/ppf-test/.cache/go-build
 
 # Copy the needed files
 COPY go.mod go.sum ./
@@ -39,3 +32,4 @@ WORKDIR /app/test
 
 # Set entrypoint for testing
 ENTRYPOINT ["just", "test"]
+```

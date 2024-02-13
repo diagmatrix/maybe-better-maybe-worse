@@ -31,6 +31,3 @@ WORKDIR /app/test
 # Set entrypoint for testing
 ENTRYPOINT ["just", "test"]
 ```
-
-No elimino `go.mod` y `go.sum` porque no ocupan mucho espacio y era un rompecabezas intentar hacerlo 
-sin darle permisos de escritura al directorio `/app` al usuario `ppf-tests`
