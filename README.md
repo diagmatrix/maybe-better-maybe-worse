@@ -26,21 +26,38 @@ Este proyecto tiene las siguientes dependencias para su creación:
 
  - [*Go*](https://go.dev/)
  - [*Testify*](https://github.com/stretchr/testify)
- - [*Task*](https://taskfile.dev/)
+ - [*Just*](https://github.com/casey/just)
 
 ## Órdenes
 
 Para comprobar el validez sintáctica de los archivos del proyecto, ejecutar:
 
 ```Bash
-task check
+just check
 ```
 
 Para lanzar los tests del proyecto, ejecutar:
 
 ```Bash
-task test
+just test
 ```
+
+## Contenedor de pruebas
+
+Existe un contenedor de Docker para realizar pruebas. Para crear el contenedor y
+ejecutar las pruebas, ejecutar:
+
+```Bash
+docker build -t diagmatrix/maybe-better-maybe-worse . && docker run -u 1001 -t -v `pwd`:/app/test diagmatrix/maybe-better-maybe-worse
+```
+
+Para ejecutar únicamente el contenedor (si está construido), ejecutar:
+
+```Bash
+docker run -u 1001 -t -v `pwd`:/app/test diagmatrix/maybe-better-maybe-worse
+```
+
+El contenedor puede encontrarse [aquí](https://hub.docker.com/repository/docker/diagmatrix/maybe-better-maybe-worse/general).
 
 ## Estado del proyecto
 
@@ -59,3 +76,5 @@ task test
     - [Gestor de paquetes](docs/dependencias.md)
     - [Gestor de tareas](docs/gestor_tareas.md)
     - [Tests](docs/tests.md)
+
+ 5. [*Imagen de pruebas*](docs/imagen.md)

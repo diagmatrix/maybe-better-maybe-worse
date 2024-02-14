@@ -1,6 +1,6 @@
 lenguaje: Go
 entidad: pkg/shooting-plan.go
 automatizar:
-  fichero: taskfile.yaml
-  orden: task
+  fichero: justfile
+  orden: just
 test: tests/ppf_test.go
